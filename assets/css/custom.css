@@ -1,0 +1,80 @@
+.book-shop-main form#book-shop-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-shop-main .search-filters {
+  padding: 15px 0px;
+}
+
+.book-shop-main table {
+  width: 100%;
+}
+
+.book-shop-main .pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.book-shop-main .pagination ul li {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.book-shop-main .pagination ul li.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.book-shop-main .ratings , .bookshop-bookdetails .ratings{
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #b1b1b1;
+  overflow: hidden;
+}
+
+.book-shop-main .full-stars , .bookshop-bookdetails .full-stars{
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fde16d;
+}
+
+.book-shop-main .empty-stars:before,
+.book-shop-main .full-stars:before , 
+.bookshop-bookdetails .empty-stars:before , 
+.bookshop-bookdetails .full-stars:before {
+  content: "\2605\2605\2605\2605\2605";
+  font-size: 14pt;
+}
+
+.book-shop-main .empty-stars:before  , .bookshop-bookdetails .empty-stars:before{
+  -webkit-text-stroke: 1px #848484;
+}
+
+.book-shop-main .full-stars:before ,  .bookshop-bookdetails .full-stars:before {
+  -webkit-text-stroke: 1px orange;
+}
+
+/* Webkit-text-stroke is not supported on firefox or IE */
+/* Firefox */
+@-moz-document url-prefix() {
+  .book-shop-main .full-stars , .bookshop-bookdetails .full-stars{
+    color: #ECBE24;
+  }
+}
+/* IE */
+<!--[if IE]>
+  .book-shop-main .full-stars , .bookshop-bookdetails .full-stars{
+    color: #ECBE24;
+  }
+<![endif]-->
